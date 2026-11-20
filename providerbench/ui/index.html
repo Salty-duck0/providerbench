@@ -1282,7 +1282,7 @@ function field(s, p) {
     var o2 = '<option value="swe-smith"' + (v === "swe-smith" || !v ? " selected" : "") + ">SWE-smith (built in)</option>" +
       '<option value="agentx"' + (v === "agentx" ? " selected" : "") + ">AgentX Claude Code traces (built in)</option>";
     if (v && v.indexOf("upload:") === 0) o2 += '<option value="' + esc(v) + '" selected>' + esc((datasetById(v.slice(7)) || {}).name || v.slice(7)) + "</option>";
-    return '<div class="f wide2"' + help + ">" + lab + "<select" + attrs + ">" + o2 + '</select><div class="dsinfo">SWE-smith: real SWE-agent bug-fix sessions. AgentX: SemiAnalysis' raw Claude Code sessions (10, SWE-bench tasks). Your own traces go in <a href="#data">Your data</a>.</div></div>';
+    return '<div class="f wide2"' + help + ">" + lab + "<select" + attrs + ">" + o2 + '</select><div class="dsinfo">SWE-smith: real SWE-agent bug-fix sessions. AgentX: raw Claude Code sessions from SemiAnalysis (10, SWE-bench tasks). Your own traces go in <a href="#data">Your data</a>.</div></div>';
   }
   if (p.type === "source") {
     var opts = '<option value=""' + (!v ? " selected" : "") + " disabled>Pick a dataset…</option>";
